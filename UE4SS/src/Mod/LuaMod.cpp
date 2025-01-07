@@ -2199,7 +2199,8 @@ Overloads:
                                     }
                                     const auto current_path = std::string{lua.get_string()};
                                     auto files_table = lua.prepare_new_table();
-                                    for (int i = 1; const auto& item : std::filesystem::directory_iterator(current_path))
+                                    int i;
+                                    for (i = 1; const auto& item : std::filesystem::directory_iterator(current_path))
                                     {
                                         if (!item.is_directory())
                                         {
